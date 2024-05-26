@@ -133,7 +133,7 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
         val bundle = Bundle()
         bundle.putString(BluetoothConstants.DEVICE_NAME, device.name)
         msg.data = bundle
-        mHandler.sendMessage(msg)
+        //mHandler.sendMessage(msg)
         state = BluetoothConstants.STATE_CONNECTED
 
         // Give the new state to the Handler so the UI Activity can update
@@ -187,7 +187,7 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
         val bundle = Bundle()
         bundle.putInt(TOAST, R.string.fail_connect_bt)
         msg.data = bundle
-        mHandler.sendMessage(msg)
+        //mHandler.sendMessage(msg)
         state = BluetoothConstants.STATE_FAILED
 
         // Give the new state to the Handler so the UI Activity can update
@@ -205,7 +205,7 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
         val bundle = Bundle()
         bundle.putInt(TOAST, R.string.lost_connection_bt)
         msg.data = bundle
-        mHandler.sendMessage(msg)
+        //mHandler.sendMessage(msg)
         state = BluetoothConstants.STATE_NONE
     }
 
