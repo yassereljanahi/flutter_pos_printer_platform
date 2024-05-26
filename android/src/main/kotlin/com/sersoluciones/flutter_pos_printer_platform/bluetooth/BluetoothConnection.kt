@@ -340,7 +340,7 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
                     putInt(TOAST, R.string.fail_write_data)
                 }
                 writeErrorMsg.data = bundle
-                mHandler.sendMessage(writeErrorMsg)
+                //mHandler.sendMessage(writeErrorMsg)
                 return
             }
 
