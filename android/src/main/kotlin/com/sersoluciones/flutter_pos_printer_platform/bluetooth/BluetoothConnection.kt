@@ -191,6 +191,7 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
         state = BluetoothConstants.STATE_FAILED
 
         // Give the new state to the Handler so the UI Activity can update
+        result.success(false)
         mHandler.obtainMessage(BluetoothConstants.MESSAGE_STATE_CHANGE, state, -1, result).sendToTarget()
 
         state = BluetoothConstants.STATE_NONE
