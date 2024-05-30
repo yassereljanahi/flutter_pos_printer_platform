@@ -52,15 +52,15 @@ class USBPrinterAdapter private constructor() {
                         )
                         mUsbDevice = usbDevice
                     } else {
-                        Toast.makeText(
-                            context, mContext?.getString(R.string.user_refuse_perm) + ": ${usbDevice!!.deviceName}",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        //Toast.makeText(
+                        //    context, mContext?.getString(R.string.user_refuse_perm) + ": ${usbDevice!!.deviceName}",
+                        //    Toast.LENGTH_LONG
+                        //).show()
                     }
                 }
             } else if ((UsbManager.ACTION_USB_DEVICE_DETACHED == action)) {
                 if (mUsbDevice != null) {
-                    Toast.makeText(context, mContext?.getString(R.string.device_off), Toast.LENGTH_LONG).show()
+                    //Toast.makeText(context, mContext?.getString(R.string.device_off), Toast.LENGTH_LONG).show()
                     closeConnectionIfExists()
                 }
             }
@@ -81,7 +81,7 @@ class USBPrinterAdapter private constructor() {
     val deviceList: List<UsbDevice>
         get() {
             if (mUSBManager == null) {
-                Toast.makeText(mContext, mContext?.getString(R.string.not_usb_manager), Toast.LENGTH_LONG).show()
+                //Toast.makeText(mContext, mContext?.getString(R.string.not_usb_manager), Toast.LENGTH_LONG).show()
                 return emptyList()
             }
             return ArrayList(mUSBManager!!.deviceList.values)
@@ -132,7 +132,7 @@ class USBPrinterAdapter private constructor() {
                         Log.e(LOG_TAG, "Failed to open USB Connection")
                         return false
                     }
-                    Toast.makeText(mContext,  mContext?.getString(R.string.connected_device), Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(mContext,  mContext?.getString(R.string.connected_device), Toast.LENGTH_SHORT).show()
                     if (usbDeviceConnection.claimInterface(usbInterface, true)) {
                         mEndPoint = ep
                         mUsbInterface = usbInterface
